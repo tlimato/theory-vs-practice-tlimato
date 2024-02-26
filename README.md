@@ -20,6 +20,7 @@
   reasons why this could be the case, given that reasoning with the asymptotic
   complexity suggests a different time.
 
+  ## Sol
   The tree being unbalanced is a big factor in the time increase. For example, The data distribution of the additional elements could heavily skew the date to one side of the tree causing massive inefficiencies. It could also be as convulated as memory issues.
 
 Add your answers to this markdown file.
