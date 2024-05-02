@@ -16,7 +16,7 @@ of search in a binary search tree, how long would you guess finding the same
 element in a search tree with 10,000 elements takes? Explain your reasoning.
 
 ### Sol
-The asymptotic complexity of search operations in a binary search tree is typically described as $O(log n)$, where $n$ is the number of elements in the tree. This logarithmic complexity implies that the time required to search for any given element increases logarithmically with the number of elements in the tree. 
+The asymptotic complexity of search operations in a binary search tree is typically described as $O(log(n))$, where $n$ is the number of elements in the tree. This logarithmic complexity implies that the time required to search for any given element increases logarithmically with the number of elements in the tree. 
 
 To break this down further let's go step by step using the relation of 1000 elements in 5 seconds to solve a find operation, we can approximate the find operation for the same element in a tree with 10,000 elements. When the number of elements increases to 10,000 (an increase by a factor of 10), the logarithmic complexity means that the depth of the tree—and subsequently, the maximum number of comparisons needed—increases only slightly. If we calculate the depth of the tree using $n$ to represent the number of elements we get the following:
 - For $n = 1,000$, the depth is $log₂(1000) ≈ 9.966$.
@@ -31,7 +31,7 @@ You measure the time with 10,000 elements and it takes 100 seconds! List 3 reaso
 There are quite a few things that could be causing the large increase in time relative to what was expected. Given what we discussed in class these are the three that come to mind:
 
 ### 1a. **Tree Balance**:
-- **Unbalanced Tree**: If the binary search tree is not well-balanced, it might degrade to a structure similar to a linked list, especially if the data insertion order causes a skew. In such cases, the worst-case time complexity becomes $O(n)$ instead of $O(log n)$. However, given the relation of 5 seconds for 1,000  for a logarithmic relation of $O(log n)$, then if we were approximating an unbalanced tree that is using the worst-case time complexity of $O(n)$ we would expect a find operation to take 50 seconds at 10,000 elements. This isn't a likely possibility then.
+- **Unbalanced Tree**: If the binary search tree is not well-balanced, it might degrade to a structure similar to a linked list, especially if the data insertion order causes a skew. In such cases, the worst-case time complexity becomes $O(n)$ instead of $O(log(n))$. However, given the relation of 5 seconds for 1,000  for a logarithmic relation of $O(log(n))$, then if we were approximating an unbalanced tree that is using the worst-case time complexity of $O(n)$ we would expect a find operation to take 50 seconds at 10,000 elements. This isn't a likely possibility then.
 
 ### 1b. **Improper Measurement**:
 - **Extra measured operations**: If the timer used when recording the time for 10,000 elements in the tree included more operations that depend on tree size other than just the search, like creating the tree (insertions for each element), and balancing the tree then we could get an execution time that is much larger than expected. Additionally, if the timer recorded the first time correctly but didn't time the larger tree correctly then this effect would be magnified.
